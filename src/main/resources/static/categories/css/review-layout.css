@@ -1,0 +1,28 @@
+main {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 40px;
+}
+.page-links {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 1rem;
+    right: 1rem;
+    overflow-x: hidden;
+}
+.container {
+    display: grid;
+    grid-template-rows: 150px auto;
+    max-width: 1200px;
+    width: 90%;
+    margin: 5px auto;
+}
+
+.ben-image {
+    width: 450px;
+}
+.bio {
+    grid-column: 1/ span 3;
+}

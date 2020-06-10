@@ -1,0 +1,34 @@
+<section>
+          <h2>Ben Stiller</h2>
+          <p>
+            Benjamin Edward Meara Stiller (born November 30, 1965) is an
+            American actor, comedian, film producer, film director, and
+            writer.His films have grossed more than $2.6 billion in Canada and
+            the United States, with an average of $79 million per film.[3]
+            Throughout his career, he has received various awards and honors,
+            including an Emmy Award, multiple MTV Movie Awards, a Britannia
+            Award and a Teen Choice Award.
+          </p>
+        </section>
+
+<section>
+            <h2>Benjamin</h2>
+            <p>
+            Benjamin was the last-born of Jacob's thirteen children, and the
+            second and last son of Rachel in Jewish, Christian and Islamic
+            tradition. He was the progenitor of the Israelite Tribe of Benjamin.
+            In the Hebrew Bible unlike Rachel's first son, Joseph, Benjamin was
+            born in Canaan.
+            </p>
+        </section>
+        <section>
+          <h2>Benjamin Netanyahu</h2>
+          <p>
+            Benjamin "Bibi" Netanyahu ; born 21 October 1949) is an Israeli
+            politician who has been Prime Minister of Israel since 2009, having
+            previously held the position from 1996 to 1999. Netanyahu is also
+            the Chairman of the Likud-National Liberal Movement. He is the
+            longest-serving Prime Minister in Israeli history, and the first to
+            be born in Israel
+          </p>
+        </section>

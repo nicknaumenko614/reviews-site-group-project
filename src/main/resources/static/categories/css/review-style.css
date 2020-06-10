@@ -1,10 +1,34 @@
-
 body {
-    font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
+  background-color: #011627;
+  color: #f6f7f8;
 }
-.bio {
-    font-family: 'Raleway', sans-serif;
+p {
+  font-family: "Raleway", sans-serif;
 }
-.review {
-    font-family: 'Raleway', sans-serif;
+p a {
+  font-family: "Oswald", sans-serif;
+}
+.page-links {
+  background-color: #03213a;
+}
+.page-links a {
+  color: #f6f7f8;
+  text-decoration: none;
+}
+.page-links a:hover {
+  color: #ff3366;
+}
+main h1 {
+  color: #ff3366;
+}
+h2 {
+  color: #ff3366;
+}
+.hashtag a {
+  color: #2ec4b6;
+  text-decoration: none;
+}
+.hashtag a:hover {
+  color: #ff3366;
 }

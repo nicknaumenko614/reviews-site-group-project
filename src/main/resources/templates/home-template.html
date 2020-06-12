@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Review of Bens</title>
+    <link rel="stylesheet" href="./css/home-layout.css"/>
+    <link rel="stylesheet" href="./css/home-style.css"/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Ben Emporium</h1>
+        <!-- <nav class="page-links">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./tags.html">#Hashtags</a></li>
+                <li><a href="./categories/actors.html">Actors</a></li>
+                <li><a href="./categories/athletes.html">Athletes</a></li>
+                <li><a href="./categories/historical.html">Historical Figures</a></li>
+            </ul>
+        </nav> -->
+    </header>
+    <main>
+        <p>
+            A brief appreciation of Bens.
+        </p>
+        <section>
+            <h2>Categories</h2>
+            <ul class="items">
+                <li th:each="category:${categories}" class="item">
+                    <a th:text="${category.categoryName}"
+                       th:href="@{'/categories/'+${category.categoryName}}">Actors</a></li>
+
+            </ul>
+            <h2>#Hashtags</h2>
+            <ul class="items">
+                <li th:each="hashtag:${hashtags}" class="item">
+                    <a th:text="${hashtag.hashtag}" th:href="@{'/tags/'+${hashtag.hashtag}}">#BenThereDoneThat</a>
+                </li>
+
+            </ul>
+        </section>
+    </main>
+</div>
+</body>
+</html>

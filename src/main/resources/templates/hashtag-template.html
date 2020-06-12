@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ben Actors</title>
+    <title>Hashtags</title>
     <link rel="stylesheet" href="/css/nav-layout.css" />
     <link rel="stylesheet" href="/css/nav-style.css" />
     <link
@@ -20,23 +21,26 @@
   <body>
     <div class="container">
       <header>
-        <h1 th:text="${category.categoryName}"> categoryName</h1>
+        <h1>#Hashtags</h1>
         <nav class="page-links">
           <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./actors.html">Actors</a></li>
-            <li><a href="./athletes.html">Athletes</a></li>
-            <li><a href="./historical.html">Historical Figures</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./tags.html">#Hashtags</a></li>
+            <li><a href="./categories/actors.html">Actors</a></li>
+            <li><a href="./categories/athletes.html">Athletes</a></li>
+            <li>
+              <a href="./categories/historical.html">Historical Figures</a>
+            </li>
           </ul>
         </nav>
       </header>
-      <main>
+      <nav>
         <ul class="items">
-          <li th:each ="ben:${category.bens}"class="item">
+          <li th:each="ben:${hashtag.bens}" class="item">
             <a th:href="@{'/bens/'+${ben.name}}" th:text="${ben.name}">Ben Affleck</a>
           </li>
         </ul>
-      </main>
+      </nav>
     </div>
   </body>
 </html>

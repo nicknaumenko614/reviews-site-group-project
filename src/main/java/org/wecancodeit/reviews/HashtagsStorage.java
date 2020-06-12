@@ -8,11 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class CategoryStorage {
+public class HashtagsStorage {
 
-    Map<String, Category> categories = new HashMap<>();
 
-    public CategoryStorage() {
+    Map<String, Hashtags> hashtags = new HashMap<>();
+
+    public HashtagsStorage() {
         Ben ben1 = new Ben("Ben Affleck", "Actor", "08/15/1972",
                 "American Actor and Filmmaker", "BenThereDoneThat",
                 "../../images/Ben_Affleck.jpg", "4.25 out of 5", "A good ol’ boy from Bas-tan.");
@@ -22,15 +23,15 @@ public class CategoryStorage {
         ArrayList<Ben> allBens = new ArrayList<>();
         allBens.add(ben1);
         allBens.add(ben2);
-        categories.put("Actors", new Category("Actors", allBens));
+        hashtags.put("BenThereDoneThat", new Hashtags("BenThereDoneThat", allBens));
     }
 
-    public Category findCategoryByName(String category) {
-        return categories.get(category);
+    public Hashtags findHashtagByName(String hashtag) {
+        return hashtags.get(hashtag);
 
     }
 
-    public Collection<Category> getAllCategories() {
-        return categories.values();
+    public Collection<Hashtags> getAllHashtags() {
+        return hashtags.values();
     }
 }

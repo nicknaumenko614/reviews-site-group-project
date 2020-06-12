@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ben Banneker</title>
-    <link rel="stylesheet" href="../css/review-layout.css" />
-    <link rel="stylesheet" href="../css/review-style.css" />
+    <link rel="stylesheet" href="/css/review-layout.css" />
+    <link rel="stylesheet" href="/css/review-style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
       rel="stylesheet"
@@ -30,26 +32,26 @@
       </header>
       <main>
         <section>
-          <h1>Benjamin Banneker</h1>
-          <h2>Author</h2>
-          <h3>born on November 9, 1731</h3>
+          <h1 th:text="${ben.name}">Benjamin Banneker</h1>
+          <h2 th:text="${ben.profession}">Author</h2>
+          <h3 th:text="${ben.birthDate}">born on November 9, 1731</h3>
           <p class="hashtag">
-            <a href="../../tags/benThereDoneThatOld.html">#BenThereDoneThat</a>
+            <a th:text="${ben.hashtag}" th:href="@{'/tags/'+${ben.hashtag}}"></a>
           </p>
         </section>
-        <p class="bio">
+        <p th:text="${ben.bio}" class="bio">
           Benjamin Banneker was a free African-American almanac author,
           surveyor, naturalist, and farmer. Born in Baltimore County, Maryland,
           to a free African-American woman and a former slave, Banneker had
           little formal education and was largely self-taught.
         </p>
         <img
-          src="../../images/ben_banneker.jpg"
+          th:src="@{'../static/images/'+ ${ben.imageName}}"
           alt="Ben Banneker"
           class="ben-image"
         />
-        <h2 class="review-score">5 out of 5</h2>
-        <p class="review">
+        <h2 th:text="${ben.reviewScore}" class="review-score">5 out of 5</h2>
+        <p th:text="${ben.reviewText}" class="review">
           With the ability to teach himself with no next to no education is
           nothing short of remarkable. Through an extensive immersion into
           astronomy. Bannaker was able to make calculations that predicted

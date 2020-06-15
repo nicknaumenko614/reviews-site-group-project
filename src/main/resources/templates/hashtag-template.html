@@ -21,16 +21,13 @@
   <body>
     <div class="container">
       <header>
-        <h1>#Hashtags</h1>
+        <h1 th:text="'#'+${categories.hashtag}">#Hashtags</h1>
         <nav class="page-links">
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./tags.html">#Hashtags</a></li>
-            <li><a href="./categories/actors.html">Actors</a></li>
-            <li><a href="./categories/athletes.html">Athletes</a></li>
-            <li>
-              <a href="./categories/historical.html">Historical Figures</a>
-            </li>
+            <li> <a th:href="@{'/'}">Home</a></li>
+            <li th:each="category:${categories}">
+              <a th:text="${category.categoryName}"
+                 th:href="@{'/categories/'+${category.categoryName}}">Actors</a></li>
           </ul>
         </nav>
       </header>

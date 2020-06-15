@@ -23,10 +23,10 @@
         <h1 th:text="${category.categoryName}"> categoryName</h1>
         <nav class="page-links">
           <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./actors.html">Actors</a></li>
-            <li><a href="./athletes.html">Athletes</a></li>
-            <li><a href="./historical.html">Historical Figures</a></li>
+            <li> <a th:href="@{'/'}">Home</a></li>
+            <li th:each="category:${categories}">
+              <a th:text="${category.categoryName}"
+                 th:href="@{'/categories/'+${category.categoryName}}">Actors</a></li>
           </ul>
         </nav>
       </header>

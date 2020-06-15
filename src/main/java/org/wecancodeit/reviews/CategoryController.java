@@ -20,6 +20,7 @@ public class CategoryController {
     @RequestMapping("categories/{category}")
     public String showSingleCategory(@PathVariable String category, Model model){
         model.addAttribute("category", categoryStorage.findCategoryByName(category));
+        model.addAttribute("categories", categoryStorage.getAllCategories());
     return "category-template";
 
     }

@@ -10,8 +10,9 @@ public class Ben {
     private String imageName;
     private String reviewScore;
     private String reviewText;
+    private String category;
 
-    public Ben(String name, String profession, String birthDate, String bio, String hashtag, String imageName, String reviewScore, String reviewText) {
+    public Ben(String name, String profession, String birthDate, String bio, String hashtag, String imageName, String reviewScore, String reviewText, String category) {
         this.name = name;
         this.profession = profession;
         this.birthDate = birthDate;
@@ -20,6 +21,7 @@ public class Ben {
         this.imageName = imageName;
         this.reviewScore = reviewScore;
         this.reviewText = reviewText;
+        this.category = category;
     }
 
     public String getName() {
@@ -53,6 +55,10 @@ public class Ben {
 
     public String getReviewText() {
         return reviewText;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
 

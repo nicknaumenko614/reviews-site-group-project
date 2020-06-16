@@ -1,7 +1,16 @@
 package org.wecancodeit.reviews;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Ben {
 
+    @Id
+    @GeneratedValue
+    private long id;
     private String name;
     private String profession;
     private String birthDate;
@@ -10,9 +19,13 @@ public class Ben {
     private String imageName;
     private String reviewScore;
     private String reviewText;
-    private String category;
 
-    public Ben(String name, String profession, String birthDate, String bio, String hashtag, String imageName, String reviewScore, String reviewText, String category) {
+    @ManyToOne
+    private Category category;
+
+    protected Ben(){}
+
+    public Ben(String name, String profession, String birthDate, String bio, String hashtag, String imageName, String reviewScore, String reviewText, Category category) {
         this.name = name;
         this.profession = profession;
         this.birthDate = birthDate;
@@ -57,8 +70,12 @@ public class Ben {
         return reviewText;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
+    }
+
+    public long getId() {
+        return id;
     }
 }
 

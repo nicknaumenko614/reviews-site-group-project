@@ -20,7 +20,7 @@ xmlns:th="http://www.thymeleaf.org">
   <body>
     <div class="container">
       <header>
-        <h1 th:text="${ben.category}">Ben Historical Figure</h1>
+        <h1 th:text="${ben.category.categoryName}">Ben Historical Figure</h1>
         <nav class="page-links">
           <ul>
             <li> <a th:href="@{'/'}">Home</a></li>
@@ -35,9 +35,11 @@ xmlns:th="http://www.thymeleaf.org">
           <h1 th:text="${ben.name}">Benjamin Banneker</h1>
           <h2 th:text="${ben.profession}">Author</h2>
           <h3 th:text="${ben.birthDate}">born on November 9, 1731</h3>
-          <p class="hashtag">
-            <a th:text="${ben.hashtag}" th:href="@{'/tags/'+${ben.hashtag}}"></a>
-          </p>
+            <ul class="hashtags">
+          <li class="hashtag" th:each="hashtag:${ben.hashtags}">
+          <a th:text="'#'+${hashtag.hashtag}" th:href="@{'/tags/'+${hashtag.hashtag}}"></a>
+          </li>
+        </ul>
         </section>
         <p th:text="${ben.bio}" class="bio">
           Benjamin Banneker was a free African-American almanac author,

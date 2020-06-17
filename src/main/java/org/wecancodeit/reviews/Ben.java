@@ -1,9 +1,9 @@
 package org.wecancodeit.reviews;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
 @Entity
 public class Ben {
@@ -15,7 +15,6 @@ public class Ben {
     private String profession;
     private String birthDate;
     private String bio;
-    private String hashtag;
     private String imageName;
     private String reviewScore;
     private String reviewText;
@@ -23,18 +22,21 @@ public class Ben {
     @ManyToOne
     private Category category;
 
+    @ManyToMany
+    private Collection<Hashtags> hashtags;
+
     protected Ben(){}
 
-    public Ben(String name, String profession, String birthDate, String bio, String hashtag, String imageName, String reviewScore, String reviewText, Category category) {
+    public Ben(String name, String profession, String birthDate, String bio, String imageName, String reviewScore, String reviewText, Category category, Hashtags... hashtags) {
         this.name = name;
         this.profession = profession;
         this.birthDate = birthDate;
         this.bio = bio;
-        this.hashtag = hashtag;
         this.imageName = imageName;
         this.reviewScore = reviewScore;
         this.reviewText = reviewText;
         this.category = category;
+        this.hashtags = new ArrayList<>(Arrays.asList(hashtags));
     }
 
     public String getName() {
@@ -54,8 +56,8 @@ public class Ben {
         return bio;
     }
 
-    public String getHashtag() {
-        return hashtag;
+    public Collection<Hashtags> getHashtags() {
+        return hashtags;
     }
 
     public String getImageName() {

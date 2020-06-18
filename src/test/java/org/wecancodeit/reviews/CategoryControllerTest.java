@@ -11,7 +11,8 @@ public class CategoryControllerTest {
 
     @Test
     public void shouldReturnCategoryTemplate() {
-        CategoryController underTest = new CategoryController(new CategoryStorage());
+        CategoryStorage mockStorage = mock(CategoryStorage.class);
+        CategoryController underTest = new CategoryController(mockStorage);
         Model model = mock(Model.class);
         String templateName = underTest.showSingleCategory("Actor", model);
         assertThat(templateName).isEqualTo("category-template");
@@ -33,7 +34,7 @@ public class CategoryControllerTest {
         CategoryStorage mockStorage = mock(CategoryStorage.class);
         CategoryController underTest = new CategoryController(mockStorage);
         Model model = Mockito.mock(Model.class);
-        Category testCategory = new Category("Test Category", null);
+        Category testCategory = new Category("Test Category");
         when(mockStorage.findCategoryByName("Actors")).thenReturn(testCategory);
         underTest.showSingleCategory("Actors", model);
         verify(model).addAttribute("category", testCategory);

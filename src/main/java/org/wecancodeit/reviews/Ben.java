@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 public class Ben {
@@ -78,6 +79,27 @@ public class Ben {
 
     public long getId() {
         return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ben ben = (Ben) o;
+        return id == ben.id &&
+                Objects.equals(name, ben.name) &&
+                Objects.equals(profession, ben.profession) &&
+                Objects.equals(birthDate, ben.birthDate) &&
+                Objects.equals(bio, ben.bio) &&
+                Objects.equals(imageName, ben.imageName) &&
+                Objects.equals(reviewScore, ben.reviewScore) &&
+                Objects.equals(reviewText, ben.reviewText) &&
+                Objects.equals(category, ben.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, profession, birthDate, bio, imageName, reviewScore, reviewText, category);
     }
 }
 

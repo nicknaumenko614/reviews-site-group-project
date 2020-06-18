@@ -17,4 +17,8 @@ public class BenStorage {
     public Ben getBenByName(String name) {
         return benRepo.findByName(name);
     }
+
+    public void addBen(Ben ben) {
+        benRepo.save(ben);
+    }
 }

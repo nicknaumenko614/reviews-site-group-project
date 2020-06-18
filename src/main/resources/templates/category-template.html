@@ -2,41 +2,60 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ben Actors</title>
-    <link rel="stylesheet" href="/css/nav-layout.css" />
-    <link rel="stylesheet" href="/css/nav-style.css" />
+    <link rel="stylesheet" href="/css/nav-layout.css"/>
+    <link rel="stylesheet" href="/css/nav-style.css"/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
+            rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+            rel="stylesheet"
     />
-  </head>
-  <body>
-    <div class="container">
-      <header>
+</head>
+<body>
+<div class="container">
+    <header>
         <h1 th:text="${category.categoryName}"> categoryName</h1>
         <nav class="page-links">
-          <ul>
-            <li> <a th:href="@{'/'}">Home</a></li>
-            <li th:each="category:${categories}">
-              <a th:text="${category.categoryName}"
-                 th:href="@{'/categories/'+${category.categoryName}}">Actors</a></li>
-          </ul>
+            <ul>
+                <li><a th:href="@{'/'}">Home</a></li>
+                <li th:each="category:${categories}">
+                    <a th:text="${category.categoryName}"
+                       th:href="@{'/categories/'+${category.categoryName}}">Actors</a></li>
+            </ul>
         </nav>
-      </header>
-      <main>
+    </header>
+    <main>
         <ul class="items">
-          <li th:each ="ben:${category.bens}"class="item">
-            <a th:href="@{'/bens/'+${ben.name}}" th:text="${ben.name}">Ben Affleck</a>
-          </li>
+            <li th:each="ben:${category.bens}" class="item">
+                <a th:href="@{'/bens/'+${ben.name}}" th:text="${ben.name}">Ben Affleck</a>
+            </li>
         </ul>
-      </main>
-    </div>
-  </body>
+    </main>
+    <section>
+        <h2>Add Review</h2>
+            <form action="bens/add" method="Post" class="new-ben-form">
+                <label for="new-ben__ben-name-input" class="form_label">Name</label>
+                <input type="text" name="name" id="new-ben__ben-name-input">
+                <label for="new-ben__ben-profession-input" class="form_label">Profession</label>
+                <input type="text" name="profession" id="new-ben__ben-profession-input">
+                <label for="new-ben__ben-birthdate-input" class="form_label">Birthdate</label>
+                <input type="text" name="birthdate" id="new-ben__ben-birthdate-input">
+                <label for="new-ben__ben-review-score-input" class="form_label">Review Score</label>
+                <input type="text" name="review-score" id="new-ben__ben-review-score-input">
+                <label for="new-ben__ben-bio-input" class="form_label">Bio</label>
+                <textarea type="text" name="bio" id="new-ben__ben-bio-input"></textarea>
+                <label for="new-ben__ben-review-text-input" class="form_label">Review Text</label>
+                <textarea type="text" name="review-text" id="new-ben__ben-review-text-input"></textarea>
+                <input th:value="${category.id}" type="hidden" name="category" id="new-ben__ben-category-input">
+                <button type="submit">Submit</button>
+            </form>
+    </section>
+</div>
+</body>
 </html>

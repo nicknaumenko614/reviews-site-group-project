@@ -24,4 +24,8 @@ public class HashtagsStorage {
     public Iterable<Hashtags> getAllHashtags() {
         return hashtagsRepo.findAll();
     }
+
+    public void addHashtags(Hashtags hashtagsToAdd) {
+        hashtagsRepo.save(hashtagsToAdd);
+    }
 }

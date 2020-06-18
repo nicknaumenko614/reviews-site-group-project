@@ -32,15 +32,27 @@
                 <li th:each="category:${categories}" class="item">
                     <a th:text="${category.categoryName}"
                        th:href="@{'/categories/'+${category.categoryName}}">Actors</a></li>
-
             </ul>
             <h2>#Hashtags</h2>
             <ul class="items">
                 <li th:each="hashtag:${hashtags}" class="item">
                     <a th:text="${hashtag.hashtag}" th:href="@{'/tags/'+${hashtag.hashtag}}">#BenThereDoneThat</a>
                 </li>
-
             </ul>
+        </section>
+        <section>
+            <h2>Add Category</h2>
+            <form action="categories/add" method="Post" class="new-category-form">
+                <label for="new-category__category-input" class="form_label">New Category</label>
+                <input type="text" name="category" id="new-category__category-input">
+                <button type="submit">Submit</button>
+            </form>
+            <h2>Add Hashtag</h2>
+            <form action="tags/add" method="Post" class="new-hashtag-form">
+                <label for="new-hashtag__hashtag-input" class="form_label">New Hashtag</label>
+                <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
+                <button type="submit">Submit</button>
+            </form>
         </section>
     </main>
 </div>

@@ -2,17 +2,14 @@ package org.wecancodeit.reviews;
 
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class CategoryStorage {
-CategoryRepository categoryRepo;
+    CategoryRepository categoryRepo;
 
     public CategoryStorage(CategoryRepository categoryRepo) {
-        this.categoryRepo=categoryRepo;
+        this.categoryRepo = categoryRepo;
     }
 
     public Category findCategoryByName(String category) {
@@ -22,5 +19,14 @@ CategoryRepository categoryRepo;
 
     public Iterable<Category> getAllCategories() {
         return categoryRepo.findAll();
+    }
+
+    public void addCategory(Category category) {
+        categoryRepo.save(category);
+    }
+
+
+    public Optional<Category> findCategoryByID(Long id) {
+        return categoryRepo.findById(id);
     }
 }

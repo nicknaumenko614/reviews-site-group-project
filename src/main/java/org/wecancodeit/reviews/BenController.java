@@ -14,6 +14,7 @@ public class BenController {
 
     private BenStorage benStorage;
     private CategoryStorage categoryStorage;
+    private HashtagsStorage hashtagsStorage;
 
     public BenController(BenStorage benStorage, CategoryStorage categoryStorage) {
         this.benStorage = benStorage;
@@ -27,17 +28,30 @@ public class BenController {
         return "review-template";
     }
 
-    @PostMapping("bens/add")
+    @PostMapping("/bens/add")
     public String addSingleBen(String name, String profession, String birthDate, String bio,
-                               String reviewScore, String reviewText, String category) {
+                               String url, String reviewScore, String reviewText, long category) {
         if (benStorage.getBenByName(name) != null) {
             return "redirect:/";
         }
-        long categoryID = Long.parseLong(category);
-        Category categoryToAdd = categoryStorage.findCategoryByID(categoryID).get();
-        Ben benToAdd = new Ben(name, profession, birthDate, bio, "Ben Franklin", reviewScore,
+        Category categoryToAdd = categoryStorage.findCategoryByID(category).get();
+        Ben benToAdd = new Ben(name, profession, birthDate, bio, url, reviewScore,
                 reviewText, categoryToAdd);
         benStorage.addBen(benToAdd);
+        return "redirect:/";
+    }
+
+    @PostMapping("/bens/tags/add")
+    public String addHashtag(long id, String hashtag) {
+        Ben ben = benStorage.findByID(id);
+        if (hashtagsStorage.findHashtagByName(hashtag) != null) {
+            Hashtags hashtagToAdd = hashtagsStorage.findHashtagByName(hashtag);
+            ben.addHashtags(hashtagToAdd);
+            return "redirect:/";
+        }
+        Hashtags hashtagsToAdd = new Hashtags(hashtag);
+        hashtagsStorage.addHashtags(hashtagsToAdd);
+        ben.addHashtags(hashtagsToAdd);
         return "redirect:/";
     }
 }

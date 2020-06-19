@@ -26,7 +26,7 @@ public class HashtagsController {
         return "hashtag-template";
     }
 
-    @PostMapping("tags/add")
+    @PostMapping("/tags/add")
     public String addHashtag(String hashtag) {
         if (hashtagsStorage.findHashtagByName(hashtag) != null) {
             return "redirect:/";
@@ -35,5 +35,7 @@ public class HashtagsController {
         hashtagsStorage.addHashtags(hashtagsToAdd);
         return "redirect:/";
     }
+
+
 
 }

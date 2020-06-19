@@ -18,6 +18,10 @@ public class BenStorage {
         return benRepo.findByName(name);
     }
 
+    public Ben findByID(long id) {
+        return benRepo.findById(id).get();
+    }
+
     public void addBen(Ben ben) {
         benRepo.save(ben);
     }

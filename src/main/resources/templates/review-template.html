@@ -48,7 +48,7 @@ xmlns:th="http://www.thymeleaf.org">
           little formal education and was largely self-taught.
         </p>
         <img
-          th:src="@{'../static/images/'+ ${ben.imageName}}"
+          th:src="@{${ben.imageName}}"
           alt="Ben Banneker"
           class="ben-image"
         />
@@ -62,6 +62,15 @@ xmlns:th="http://www.thymeleaf.org">
           highly touted Ben of legend.
         </p>
       </main>
+      <section>
+        <form action="/tags/add" method="POST" class="new-hashtag-form">
+          <label for="new-hashtag__hashtag-input" class="form__label">Add Hashtag</label>
+          <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
+          <input th:value="${ben.id}" type="hidden" name="ben" id="new-ben__ben-id-input">
+          <button type="submit">Submit</button>
+        </form>
+
+      </section>
     </div>
   </body>
 </html>

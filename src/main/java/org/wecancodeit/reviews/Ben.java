@@ -26,9 +26,11 @@ public class Ben {
     @ManyToMany
     private Collection<Hashtags> hashtags;
 
-    protected Ben(){}
+    protected Ben() {
+    }
 
-    public Ben(String name, String profession, String birthDate, String bio, String imageName, String reviewScore, String reviewText, Category category, Hashtags... hashtags) {
+    public Ben(String name, String profession, String birthDate, String bio, String imageName,
+               String reviewScore, String reviewText, Category category, Hashtags... hashtags) {
         this.name = name;
         this.profession = profession;
         this.birthDate = birthDate;
@@ -79,6 +81,10 @@ public class Ben {
 
     public long getId() {
         return id;
+    }
+
+    public void addHashtags(Hashtags hashtag) {
+        hashtags.add(hashtag);
     }
 
     @Override

@@ -54,9 +54,9 @@ xmlns:th="http://www.thymeleaf.org">
         />
         <h2 th:text="${ben.reviewScore}" class="review-score">5 out of 5</h2>
         <p th:text="${ben.reviewText}" class="review">
-          With the ability to teach himself with no next to no education is
+          With the ability to teach himself with next to no education is
           nothing short of remarkable. Through an extensive immersion into
-          astronomy. Bannaker was able to make calculations that predicted
+          astronomy, Bannaker was able to make calculations that predicted
           eclipses and planetary conjunctions. For a man of color, let alone
           slave ancestry to acquire such ability and execute it makes him a
           highly touted Ben of legend.
@@ -66,10 +66,9 @@ xmlns:th="http://www.thymeleaf.org">
         <form action="/tags/add" method="POST" class="new-hashtag-form">
           <label for="new-hashtag__hashtag-input" class="form__label">Add Hashtag</label>
           <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
-          <input th:value="${ben.id}" type="hidden" name="ben" id="new-ben__ben-id-input">
+          <input th:value="${ben.id}" type="hidden" name="id" id="new-ben__ben-input">
           <button type="submit">Submit</button>
         </form>
-
       </section>
     </div>
   </body>

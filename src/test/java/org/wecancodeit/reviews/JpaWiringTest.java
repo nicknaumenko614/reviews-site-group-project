@@ -1,7 +1,6 @@
 package org.wecancodeit.reviews;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
@@ -69,8 +68,9 @@ public class JpaWiringTest {
         Hashtags retrievedHashtag = hashtagsRepo.findById(hashtags1.getId()).get();
         assertThat(retrievedHashtag).isEqualTo(hashtags1);
     }
+
     @Test
-    public void bensCanHaveMulipleComments(){
+    public void bensCanHaveMulipleComments() {
         Category testCategory = new Category("Test Category");
         categoryRepo.save(testCategory);
         Ben ben1 = new Ben("Ben Affleck", "Actor", "08/15/1972",

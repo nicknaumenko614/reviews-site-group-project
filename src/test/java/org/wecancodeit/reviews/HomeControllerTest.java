@@ -18,14 +18,16 @@ public class HomeControllerTest {
         String templateName = underTest.showHome(model);
         assertThat(templateName).isEqualTo("home-template");
     }
+
     @Test
-    public void shouldShowAllCategories(){
+    public void shouldShowAllCategories() {
         Model model = mock(Model.class);
         underTest.showHome(model);
         verify(mockCategories).getAllCategories();
     }
+
     @Test
-    public void shouldShowAllHashtags(){
+    public void shouldShowAllHashtags() {
         Model model = mock(Model.class);
         underTest.showHome(model);
         verify(mockHashtags).getAllHashtags();

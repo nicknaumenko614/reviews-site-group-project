@@ -9,10 +9,10 @@ import static org.mockito.Mockito.*;
 public class HashtagsControllerTest {
     CategoryStorage mockCategories = mock(CategoryStorage.class);
     HashtagsStorage mockHashtags = mock(HashtagsStorage.class);
-    HashtagsController underTest = new HashtagsController(mockHashtags,mockCategories);
+    HashtagsController underTest = new HashtagsController(mockHashtags, mockCategories);
 
     @Test
-    public void shouldReturnHashtagTemplate(){
+    public void shouldReturnHashtagTemplate() {
         Model model = mock(Model.class);
         String templateName = underTest.showSingleHashtag("Ben", model);
         assertThat(templateName).isEqualTo("hashtag-template");
@@ -27,7 +27,7 @@ public class HashtagsControllerTest {
     }
 
     @Test
-    public void shouldAddHashtagToModel(){
+    public void shouldAddHashtagToModel() {
         Model model = mock(Model.class);
         Hashtags testHashtag = new Hashtags("Test Hashtag");
         when(mockHashtags.findHashtagByName("Ben")).thenReturn(testHashtag);

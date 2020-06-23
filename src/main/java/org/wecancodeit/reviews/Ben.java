@@ -22,7 +22,7 @@ public class Ben {
     @Column(length = 1000)
     private String reviewText;
 
-    @OneToMany (mappedBy = "ben")
+    @OneToMany(mappedBy = "ben")
     private Collection<Comment> comments;
 
     @ManyToOne
@@ -46,6 +46,7 @@ public class Ben {
         this.category = category;
         this.hashtags = new ArrayList<>(Arrays.asList(hashtags));
     }
+
     public void addComment(Comment comment) {
         comments.add(comment);
     }

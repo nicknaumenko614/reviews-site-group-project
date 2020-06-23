@@ -39,7 +39,7 @@ public class BenController {
         Ben benToAdd = new Ben(name, profession, birthDate, bio, url, reviewScore,
                 reviewText, categoryToAdd);
         benStorage.addBen(benToAdd);
-        return "redirect:/categories/"+categoryToAdd.getCategoryName();
+        return "redirect:/categories/" + categoryToAdd.getCategoryName();
     }
 
     @PostMapping("/bens/tags/add")
@@ -59,7 +59,7 @@ public class BenController {
     }
 
     @PostMapping("/bens/comments/add")
-    public String addComment(long benId,String authorName, String commentText){
+    public String addComment(long benId, String authorName, String commentText) {
         Ben ben = benStorage.findByID(benId);
         Comment commentToAdd = new Comment(commentText, ben, authorName);
         commentStorage.addComment(commentToAdd);

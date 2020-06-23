@@ -105,11 +105,12 @@ main {
 }
 
 form {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  width: 275px;
-  margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 275px;
+    margin: 10px;
 }
+
 .comments {
     margin-left: 50px;
 }

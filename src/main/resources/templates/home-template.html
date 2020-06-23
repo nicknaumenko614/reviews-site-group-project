@@ -36,7 +36,7 @@
             <h2>#Hashtags</h2>
             <ul class="items">
                 <li th:each="hashtag:${hashtags}" class="item">
-                    <a th:text="${hashtag.hashtag}" th:href="@{'/tags/'+${hashtag.hashtag}}">#BenThereDoneThat</a>
+                    <a th:text="'#' + ${hashtag.hashtag}" th:href="@{'/tags/'+${hashtag.hashtag}}">#BenThereDoneThat</a>
                 </li>
             </ul>
         </section>

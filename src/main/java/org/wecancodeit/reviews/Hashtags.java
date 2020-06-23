@@ -20,7 +20,11 @@ public class Hashtags {
     }
 
     public Hashtags(String hashtag) {
-        this.hashtag = hashtag;
+        if (hashtag.charAt(0)!='#'){
+            this.hashtag = hashtag;
+        } else {
+            this.hashtag = hashtag.substring(1, hashtag.length());
+        }
     }
 
     public String getHashtag() {

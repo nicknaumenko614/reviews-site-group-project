@@ -57,11 +57,11 @@ public class Populator implements CommandLineRunner {
                         "contributions, our lives would be profoundly different.", historicalFigures, hashtags2);
         Ben ben3 = new Ben("Ben Kingsley", "Actor", "12/31/1943",
                 "Sir Ben Kingsley (Krishna Pandit Bhanji) is an English actor with a " +
-                "career spanning over 50 years. He has won an Oscar, a Grammy, a BAFTA, " +
-                "two Golden Globes, and a Screen Actors Guild Award. Kingsley is best " +
-                "known for his starring role as Mohandas Gandhi in the 1982 film " +
-                "Gandhi, for which he won the Academy Award for Best Actor. He has " +
-                "appeared in Schindler's List (1993)",
+                        "career spanning over 50 years. He has won an Oscar, a Grammy, a BAFTA, " +
+                        "two Golden Globes, and a Screen Actors Guild Award. Kingsley is best " +
+                        "known for his starring role as Mohandas Gandhi in the 1982 film " +
+                        "Gandhi, for which he won the Academy Award for Best Actor. He has " +
+                        "appeared in Schindler's List (1993)",
                 "../../images/ben-kingsley.jfif", "5 out of 5",
                 "A classy man and Sexy Beast, Ben Kingsley has been a part of many of " +
                         "our current favorite movies. He is a distinguished man of excellence " +
@@ -71,7 +71,7 @@ public class Populator implements CommandLineRunner {
                         "surveyor, naturalist, and farmer. Born in Baltimore County, Maryland, " +
                         "to a free African-American woman and a former slave, Banneker had " +
                         "little formal education and was largely self-taught." +
-                "surveyor, naturalist, and farmer.",
+                        "surveyor, naturalist, and farmer.",
                 "../../images/ben_banneker.jpg", "5 out of 5",
                 "With the ability to teach himself with no next to no education is " +
                         "nothing short of remarkable. Through an extensive immersion into " +
@@ -81,20 +81,22 @@ public class Populator implements CommandLineRunner {
                         "highly touted Ben of legend.", historicalFigures, hashtags1, hashtags2);
         Ben ben5 = new Ben("Ben Stiller", "Actor", "11/30/1965",
                 "Benjamin Edward Meara Stiller is an " +
-                "American actor, comedian, film producer, film director, and " +
-                "writer.His films have grossed more than $2.6 billion in Canada and " +
-                "the United States, with an average of $79 million per film. " +
-                "Throughout his career, he has received various awards and honors, " +
-                "including an Emmy Award, multiple MTV Movie Awards, a Britannia " +
-                "Award and a Teen Choice Award.",
-                "https://upload.wikimedia.org/wikipedia/commons/9/9d/Ben_Stiller_May_2019.jpg", "4 out of 5",
+                        "American actor, comedian, film producer, film director, and " +
+                        "writer.His films have grossed more than $2.6 billion in Canada and " +
+                        "the United States, with an average of $79 million per film. " +
+                        "Throughout his career, he has received various awards and honors, " +
+                        "including an Emmy Award, multiple MTV Movie Awards, a Britannia " +
+                        "Award and a Teen Choice Award.",
+                "https://upload.wikimedia.org/wikipedia/commons/9/9d/Ben_Stiller_May_2019.jpg",
+                "4 out of 5",
                 "This is a placeholder", actors, hashtags3);
         Ben ben6 = new Ben("Benjamin", "Spiritual Leader", "Uncertain",
                 "Benjamin was the last-born of Jacob's thirteen children, and the " +
                         "second and last son of Rachel in Jewish, Christian and Islamic " +
                         "tradition. He was the progenitor of the Israelite Tribe of Benjamin. " +
                         "In the Hebrew Bible unlike Rachel's first son, Joseph, Benjamin was " +
-                        "born in Canaan.", "https://upload.wikimedia.org/wikipedia/commons/d/d9/BenjaminandJoseph.jpg", "5 out of 5",
+                        "born in Canaan.", "https://upload.wikimedia.org/wikipedia/commons/d/d9/BenjaminandJoseph.jpg",
+                "5 out of 5",
                 "This is a placeholder", historicalFigures, hashtags4);
         Ben ben7 = new Ben("Benjamin Netanyahu", "Israeli Leader", "10/21/1949",
                 "Benjamin \"Bibi\" Netanyahu is an Israeli " +
@@ -106,32 +108,49 @@ public class Populator implements CommandLineRunner {
                 "3 out of 5", "This is a placeholder", historicalFigures, hashtags1);
         Ben ben8 = new Ben("Ben Simmons", "Basketball Player", "07/20/1996",
                 "Ben Simmons is an Australian professional basketball player " +
-                "for the Philadelphia 76ers of the National Basketball Association " +
-                "(NBA). He played college basketball for one season with the " +
-                "Louisiana State University (LSU) Tigers, after which he was named a " +
-                "consensus first-team All-American and the USBWA National Freshman of " +
-                "the Year. Simmons was selected with the first overall pick in the " +
-                "2016 NBA draft by the 76ers. After sitting out a year due to an " +
-                "injury", "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ben_Simmons.jpg",
-                "5 out of 5", "This is a placeholder", athletes, hashtags4);
-        Ben ben9 = new Ben("Ben Roethlisberger", "Football Player", "03/02/1982", "Nicknamed Big Ben, He is an American football " +
+                        "for the Philadelphia 76ers of the National Basketball Association " +
+                        "(NBA). He played college basketball for one season with the " +
+                        "Louisiana State University (LSU) Tigers, after which he was named a " +
+                        "consensus first-team All-American and the USBWA National Freshman of " +
+                        "the Year. Simmons was selected with the first overall pick in the " +
+                        "2016 NBA draft by the 76ers. After sitting out a year due to an " +
+                        "injury", "https://upload.wikimedia.org/wikipedia/commons/f/fa/Ben_Simmons.jpg",
+                "5 out of 5", "Combining the athleticism of LeBron James with the passing of " +
+                "Chris Paul, Ben Simmons of the Philadelphia 76ers is considered one of the best players in the NBA " +
+                "now as well as the future at only the age of 23.  With a full wide variety of accolades as a 2x NBA " +
+                "All-Star, NBA Rookie of the Year and the first overall pick in the 2016 NBA Draft, the ceiling is sky " +
+                "high for the young point forward from Melbourne, Australia.  Simmons is definitely a player to watch " +
+                "for in the NBA for years to come.", athletes, hashtags4);
+        Ben ben9 = new Ben("Ben Roethlisberger", "Football Player", "03/02/1982",
+                "Nicknamed Big Ben, He is an American football " +
                 "quarterback for the Pittsburgh Steelers of the National Football " +
                 "League (NFL). He played college football at Miami University, and " +
                 "was drafted by the Steelers in the first round (11th overall) of the " +
                 "2004 NFL Draft. Roethlisberger earned the AP NFL Offensive Rookie of " +
-                "the Year Award in 2004", "https://specials-images.forbesimg.com/imageserve/1168555183/960x0.jpg", "4 out of 5",
-                "This is a placeholder", athletes, hashtags2, hashtags3);
+                "the Year Award in 2004",
+                "https://specials-images.forbesimg.com/imageserve/1168555183/960x0.jpg", "4 out of 5",
+                "With 3 Super Bowl appearances and 2 Super Bowl Victories, including being the youngest Super " +
+                        "Bowl winning quarterback in NFL History, Roethlisberger can be considered one of the NFL's best " +
+                        "quarterbacks today and in history.  Known for his ability to scramble and avoid the pressure, " +
+                        "he currently is ranked 6th all-time in NFL career passing yards, 9th all-time in passer rating " +
+                        "(94.0), tied for 6th in yards per attempt (7.93), and tied for 10th in completion percentage " +
+                        "(63.85%) among quarterbacks.  He is arguably one of the greatest Pittsburgh Steelers and " +
+                        "players of all time.", athletes, hashtags2, hashtags3);
         Ben ben10 = new Ben("Ben Gordon", "Basketball Player", "04/04/1983",
                 "Benjamin Ashenafi Gordon MBE is a " +
-                "British-American former professional basketball player. Gordon " +
-                "played for 11 seasons in the National Basketball Association (NBA), " +
-                "and he played college basketball for the University of Connecticut, " +
-                "where he won a national championship in 2004. He is the only " +
-                "player to have ever won the NBA Sixth Man of the Year Award as a " +
-                "rookie. Gordon is second in career three-point field goals for the " +
-                "Chicago Bulls, behind Kirk Hinrich.",
+                        "British-American former professional basketball player. Gordon " +
+                        "played for 11 seasons in the National Basketball Association (NBA), " +
+                        "and he played college basketball for the University of Connecticut, " +
+                        "where he won a national championship in 2004. He is the only " +
+                        "player to have ever won the NBA Sixth Man of the Year Award as a " +
+                        "rookie. Gordon is second in career three-point field goals for the " +
+                        "Chicago Bulls, behind Kirk Hinrich.",
                 "https://www.gannett-cdn.com/presto/2020/02/21/USAT/346c9805-6bec-4920-9800-6ded30af7699-AP_Pistons_Gordon.JPG",
-                "5 out of 5", "This is a placeholder", athletes, hashtags4);
+                "5 out of 5", "The 3rd overall pick in the 2004 NBA Draft, " +
+                "Gordon was best known for his stellar career with the Chicago Bulls.  " +
+                "In his rookie year Gordon helped lead a turnaround for the Bulls from a 3–14 start to finish 47–35.  " +
+                "He was best known for his 3pt shooting, averaging 40% from behind the line and 14.9 points for his career. " +
+                "His great shooting combined with his tenacity makes him an unforgettable player.", athletes, hashtags4);
         benRepo.save(ben1);
         benRepo.save(ben2);
         benRepo.save(ben3);

@@ -107,7 +107,7 @@ main {
 form {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  width: 200px;
+  width: 275px;
   margin: 10px;
 }
 

@@ -15,12 +15,15 @@ public class Ben {
     private String name;
     private String profession;
     private String birthDate;
-    @Column(length = 512)
+    @Column(length = 1000)
     private String bio;
     private String imageURL;
     private String reviewScore;
-    @Column(length = 512)
+    @Column(length = 1000)
     private String reviewText;
+
+    @OneToMany (mappedBy = "ben")
+    private Collection<Comment> comments;
 
     @ManyToOne
     private Category category;
@@ -42,6 +45,9 @@ public class Ben {
         this.reviewText = reviewText;
         this.category = category;
         this.hashtags = new ArrayList<>(Arrays.asList(hashtags));
+    }
+    public void addComment(Comment comment) {
+        comments.add(comment);
     }
 
     public String getName() {
@@ -87,6 +93,10 @@ public class Ben {
 
     public void addHashtags(Hashtags hashtag) {
         hashtags.add(hashtag);
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
     }
 
     @Override

@@ -89,7 +89,12 @@ public class Populator implements CommandLineRunner {
                         "Award and a Teen Choice Award.",
                 "https://upload.wikimedia.org/wikipedia/commons/9/9d/Ben_Stiller_May_2019.jpg",
                 "4 out of 5",
-                "This is a placeholder", actors, hashtags3);
+                "Having written, starred in, directed, or produced more than 50 films including Zoolander, " +
+                        "the Meet the Parents trilogy, Dodgeball, Tropic Thunder, and the Night at the Museum " +
+                        "trilogy, Stiller has had a role in some of the most iconic movies of Hollywood.  " +
+                        "Stiller is highly lauded for his acting range spanning from humor and serious to his " +
+                        "latest role as a super hero starring in Marvel World's Antman.  Stiller is beloved by " +
+                        "millions around the world as he creates hit after hit.", actors, hashtags3);
         Ben ben6 = new Ben("Benjamin", "Spiritual Leader", "Uncertain",
                 "Benjamin was the last-born of Jacob's thirteen children, and the " +
                         "second and last son of Rachel in Jewish, Christian and Islamic " +
@@ -97,7 +102,15 @@ public class Populator implements CommandLineRunner {
                         "In the Hebrew Bible unlike Rachel's first son, Joseph, Benjamin was " +
                         "born in Canaan.", "https://upload.wikimedia.org/wikipedia/commons/d/d9/BenjaminandJoseph.jpg",
                 "5 out of 5",
-                "This is a placeholder", historicalFigures, hashtags4);
+                " In the bible, Joseph asked Benjamin to find his missing brother via astrology.  " +
+                        "The story continues stating that Benjamin divined that the man on the throne was Joseph so " +
+                        "Joseph identified himself to Benjamin. In these sources, Benjamin swore an oath, on the " +
+                        "memory of Joseph, that he was innocent of theft, and, when challenged about how believable " +
+                        "the oath would be, explained that remembering Joseph was so important to him that he " +
+                        "had named his sons in Joseph's honor. These sources go on to state that Benjamin's oath " +
+                        "touched Joseph so deeply that Joseph was no longer able to pretend to be a stranger.  " +
+                        "Benjamin was a figure clearly recognized for his good nature and personality.",
+                historicalFigures, hashtags4);
         Ben ben7 = new Ben("Benjamin Netanyahu", "Israeli Leader", "10/21/1949",
                 "Benjamin \"Bibi\" Netanyahu is an Israeli " +
                         "politician who has been Prime Minister of Israel since 2009, having " +
@@ -105,7 +118,14 @@ public class Populator implements CommandLineRunner {
                         "the Chairman of the Likud-National Liberal Movement. He is the " +
                         "longest-serving Prime Minister in Israeli history, and the first to " +
                         "be born in Israel", "https://upload.wikimedia.org/wikipedia/commons/1/19/Benjamin_Netanyahu_2018.jpg",
-                "3 out of 5", "This is a placeholder", historicalFigures, hashtags1);
+                "3 out of 5", "With a span of roles including, politician, diplomat, writer, " +
+                "economic consultant, and marketing executive, Netanyahu is best recognized as the longest serving " +
+                "prime minister in Israeli history.  Netanyahu fought on the front lines in the War of Attrition and " +
+                "the Yom Kippur War in 1973.  He was voted Israel's youngest-ever prime minister and was best known " +
+                "for his major reforms of the Israeli economy that were credited by commentators as having " +
+                "significantly improved Israel's subsequent economic performance.  Netanyahu is not only well-known " +
+                "in the history of Israel but will go down as one of the best leaders in global history.",
+                historicalFigures, hashtags1);
         Ben ben8 = new Ben("Ben Simmons", "Basketball Player", "07/20/1996",
                 "Ben Simmons is an Australian professional basketball player " +
                         "for the Philadelphia 76ers of the National Basketball Association " +

@@ -54,14 +54,16 @@
         />
         <h2 th:text="${ben.reviewScore}" class="review-score">5 out of 5</h2>
         <p th:text="${ben.reviewText}" class="review">
-            With the ability to teach himself with no next to no education is
-            nothing short of remarkable. Through an extensive immersion into
-            astronomy. Bannaker was able to make calculations that predicted
-            eclipses and planetary conjunctions. For a man of color, let alone
-            slave ancestry to acquire such ability and execute it makes him a
-            highly touted Ben of legend.
+            Review Text
         </p>
     </main>
+    <section>
+        <h3>User Comments</h3>
+        <div th:each="comment:${ben.comments}" class="comments">
+            <h4 th:text="${comment.authorName}">Comment Author</h4>
+            <p th:text="${comment.text}">Comment Text</p>
+        </div>
+    </section>
     <section>
         <form action="/bens/tags/add" method="POST" class="new-hashtag-form">
             <input type="hidden" th:value="${ben.id}" name="id" id="new-ben__ben-id-input">
@@ -69,7 +71,17 @@
             <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
             <button type="submit">Submit</button>
         </form>
-
+    </section>
+    <section>
+        <h3>Add a Comment</h3>
+        <form action="/bens/comments/add" method="POST" class="new-hashtag-form">
+            <input type="hidden" th:value="${ben.id}" name="benId" id="new-comment__ben-id-input">
+            <label for="new-comment-author__comment-author-input" class="form__label">Name</label>
+            <input type="text" name="authorName" id="new-comment-author__comment-author-input">
+            <label for="new-comment__comment-text-input" class="form__label">Comment Text</label>
+            <textarea name="commentText" id="new-comment__comment-text-input"></textarea>
+            <button type="submit">Submit</button>
+        </form>
     </section>
 </div>
 </body>

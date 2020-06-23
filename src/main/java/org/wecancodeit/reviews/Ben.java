@@ -15,9 +15,11 @@ public class Ben {
     private String name;
     private String profession;
     private String birthDate;
+    @Column(length = 512)
     private String bio;
-    private String imageName;
+    private String imageURL;
     private String reviewScore;
+    @Column(length = 512)
     private String reviewText;
 
     @ManyToOne
@@ -29,13 +31,13 @@ public class Ben {
     protected Ben() {
     }
 
-    public Ben(String name, String profession, String birthDate, String bio, String imageName,
+    public Ben(String name, String profession, String birthDate, String bio, String imageURL,
                String reviewScore, String reviewText, Category category, Hashtags... hashtags) {
         this.name = name;
         this.profession = profession;
         this.birthDate = birthDate;
         this.bio = bio;
-        this.imageName = imageName;
+        this.imageURL = imageURL;
         this.reviewScore = reviewScore;
         this.reviewText = reviewText;
         this.category = category;
@@ -63,8 +65,8 @@ public class Ben {
         return hashtags;
     }
 
-    public String getImageName() {
-        return imageName;
+    public String getImageURL() {
+        return imageURL;
     }
 
     public String getReviewScore() {
@@ -97,7 +99,7 @@ public class Ben {
                 Objects.equals(profession, ben.profession) &&
                 Objects.equals(birthDate, ben.birthDate) &&
                 Objects.equals(bio, ben.bio) &&
-                Objects.equals(imageName, ben.imageName) &&
+                Objects.equals(imageURL, ben.imageURL) &&
                 Objects.equals(reviewScore, ben.reviewScore) &&
                 Objects.equals(reviewText, ben.reviewText) &&
                 Objects.equals(category, ben.category);
@@ -105,7 +107,7 @@ public class Ben {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, profession, birthDate, bio, imageName, reviewScore, reviewText, category);
+        return Objects.hash(id, name, profession, birthDate, bio, imageURL, reviewScore, reviewText, category);
     }
 }
 

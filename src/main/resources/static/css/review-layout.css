@@ -105,13 +105,9 @@ main {
 }
 
 form {
-    grid-template-columns: 2;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 200px;
+  margin: 10px;
 }
 
-input {
-    width: auto;
-}
-
-textarea {
-    width: auto;
-}

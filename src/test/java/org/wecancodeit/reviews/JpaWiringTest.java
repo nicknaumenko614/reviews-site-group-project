@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
@@ -19,7 +20,7 @@ public class JpaWiringTest {
 
     @Test
     public void categoryCanHaveMultipleBens() {
-        Category testCategory = new Category ("Test Category");
+        Category testCategory = new Category("Test Category");
         categoryRepo.save(testCategory);
         Hashtags hashtags1 = new Hashtags("Test Hashtag");
         hashtagsRepo.save(hashtags1);
@@ -43,7 +44,7 @@ public class JpaWiringTest {
 
     @Test
     public void hashtagsCanHaveMultipleBens() {
-        Category testCategory = new Category ("Test Category");
+        Category testCategory = new Category("Test Category");
         categoryRepo.save(testCategory);
         Hashtags hashtags1 = new Hashtags("Test Hashtag");
         Hashtags hashtags2 = new Hashtags("Test Hashtag 2");
@@ -65,7 +66,6 @@ public class JpaWiringTest {
         Hashtags retrievedHashtag = hashtagsRepo.findById(hashtags1.getId()).get();
         assertThat(retrievedHashtag).isEqualTo(hashtags1);
     }
-
 
 
 }

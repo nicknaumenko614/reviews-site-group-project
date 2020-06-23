@@ -39,24 +39,24 @@
     </main>
     <section>
         <h2>Add Review</h2>
-            <form action="/bens/add" method="POST" class="new-ben-form">
-                <li><label for="new-ben__ben-name-input" class="form__label">Name</label>
+        <form action="/bens/add" method="POST" class="new-ben-form">
+            <li><label for="new-ben__ben-name-input" class="form__label">Name</label>
                 <input type="text" name="name" id="new-ben__ben-name-input"></li>
-                <li><label for="new-ben__ben-profession-input" class="form__label">Profession</label>
+            <li><label for="new-ben__ben-profession-input" class="form__label">Profession</label>
                 <input type="text" name="profession" id="new-ben__ben-profession-input"></li>
-                <li><label for="new-ben__ben-birthdate-input" class="form__label">Birthdate</label>
+            <li><label for="new-ben__ben-birthdate-input" class="form__label">Birthdate</label>
                 <input type="text" name="birthDate" id="new-ben__ben-birthdate-input"></li>
-                <li><label for="new-ben__ben-review-score-input" class="form__label">Review Score</label>
+            <li><label for="new-ben__ben-review-score-input" class="form__label">Review Score</label>
                 <input type="text" name="reviewScore" id="new-ben__ben-review-score-input"></li>
-                <li><label for="new-ben__ben-image-url-input" class="form__label">Image URL</label>
-                    <input type="text" name="url" id="new-ben__ben-image-url-input"></li>
-                <li><label for="new-ben__ben-bio-input" class="form__label">Bio</label>
+            <li><label for="new-ben__ben-image-url-input" class="form__label">Image URL</label>
+                <input type="text" name="url" id="new-ben__ben-image-url-input"></li>
+            <li><label for="new-ben__ben-bio-input" class="form__label">Bio</label>
                 <textarea type="text" name="bio" id="new-ben__ben-bio-input"></textarea></li>
-                <li><label for="new-ben__ben-review-text-input" class="form__label">Review Text</label>
+            <li><label for="new-ben__ben-review-text-input" class="form__label">Review Text</label>
                 <textarea type="text" name="reviewText" id="new-ben__ben-review-text-input"></textarea></li>
-                <input th:value="${category.id}" type="hidden" name="category" id="new-ben__ben-category-input">
-                <button type="submit">Submit</button>
-            </form>
+            <input th:value="${category.id}" type="hidden" name="category" id="new-ben__ben-category-input">
+            <button type="submit">Submit</button>
+        </form>
     </section>
 </div>
 </body>

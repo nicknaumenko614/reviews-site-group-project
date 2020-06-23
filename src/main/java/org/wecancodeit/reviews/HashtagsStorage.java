@@ -2,11 +2,6 @@ package org.wecancodeit.reviews;
 
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
 @Service
 public class HashtagsStorage {
 
@@ -25,7 +20,7 @@ public class HashtagsStorage {
         return hashtagsRepo.findAll();
     }
 
-    public void addHashtags(Hashtags hashtagsToAdd) {
-        hashtagsRepo.save(hashtagsToAdd);
+    public void addHashtags(Hashtags hashtagToAdd) {
+        hashtagsRepo.save(hashtagToAdd);
     }
 }

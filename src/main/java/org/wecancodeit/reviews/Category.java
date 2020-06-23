@@ -9,16 +9,17 @@ import java.util.Objects;
 
 @Entity
 public class Category {
-@Id
-@GeneratedValue
-private long id;
+    @Id
+    @GeneratedValue
+    private long id;
 
     private String categoryName;
 
-@OneToMany (mappedBy = "category")
-private Collection<Ben> bens;
+    @OneToMany(mappedBy = "category")
+    private Collection<Ben> bens;
 
-protected Category(){}
+    protected Category() {
+    }
 
     public Category(String categoryName) {
         this.categoryName = categoryName;

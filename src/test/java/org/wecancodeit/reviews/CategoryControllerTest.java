@@ -30,7 +30,7 @@ public class CategoryControllerTest {
     }
 
     @Test
-    public void shouldAddCategoryToModel(){
+    public void shouldAddCategoryToModel() {
         CategoryStorage mockStorage = mock(CategoryStorage.class);
         CategoryController underTest = new CategoryController(mockStorage);
         Model model = Mockito.mock(Model.class);

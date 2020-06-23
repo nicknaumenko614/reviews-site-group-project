@@ -13,14 +13,15 @@ public class Hashtags {
     @GeneratedValue
     private long id;
     private String hashtag;
-    @ManyToMany (mappedBy = "hashtags")
+    @ManyToMany(mappedBy = "hashtags")
     private Collection<Ben> bens;
 
-    protected Hashtags(){}
+    protected Hashtags() {
+    }
 
     public Hashtags(String hashtag) {
         this.hashtag = hashtag;
-            }
+    }
 
     public String getHashtag() {
         return hashtag;

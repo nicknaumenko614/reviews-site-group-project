@@ -3,41 +3,41 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Hashtags</title>
-    <link rel="stylesheet" href="/css/nav-layout.css" />
-    <link rel="stylesheet" href="/css/nav-style.css" />
+    <link rel="stylesheet" href="/css/nav-layout.css"/>
+    <link rel="stylesheet" href="/css/nav-style.css"/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
+            rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+            rel="stylesheet"
     />
-  </head>
-  <body>
-    <div class="container">
-      <header>
+</head>
+<body>
+<div class="container">
+    <header>
         <h1 th:text="'#'+${hashtag.hashtag}">#Hashtags</h1>
         <nav class="page-links">
-          <ul>
-            <li> <a th:href="@{'/'}">Home</a></li>
-            <li th:each="category:${categories}">
-              <a th:text="${category.categoryName}"
-                 th:href="@{'/categories/'+${category.categoryName}}">Actors</a></li>
-          </ul>
+            <ul>
+                <li><a th:href="@{'/'}">Home</a></li>
+                <li th:each="category:${categories}">
+                    <a th:text="${category.categoryName}"
+                       th:href="@{'/categories/'+${category.categoryName}}">Actors</a></li>
+            </ul>
         </nav>
-      </header>
-      <nav>
+    </header>
+    <nav>
         <ul class="items">
-          <li th:each="ben:${hashtag.bens}" class="item">
-            <a th:href="@{'/bens/'+${ben.name}}" th:text="${ben.name}">Ben Affleck</a>
-          </li>
+            <li th:each="ben:${hashtag.bens}" class="item">
+                <a th:href="@{'/bens/'+${ben.name}}" th:text="${ben.name}">Ben Affleck</a>
+            </li>
         </ul>
-      </nav>
-    </div>
-  </body>
+    </nav>
+</div>
+</body>
 </html>

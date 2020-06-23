@@ -5,9 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Optional;
+import javax.persistence.EntityManager;
 
 @Controller
 public class BenController {
@@ -16,9 +15,10 @@ public class BenController {
     private CategoryStorage categoryStorage;
     private HashtagsStorage hashtagsStorage;
 
-    public BenController(BenStorage benStorage, CategoryStorage categoryStorage) {
+    public BenController(BenStorage benStorage, CategoryStorage categoryStorage, HashtagsStorage hashtagsStorage) {
         this.benStorage = benStorage;
         this.categoryStorage = categoryStorage;
+        this.hashtagsStorage = hashtagsStorage;
     }
 
     @GetMapping("bens/{benName}")
@@ -47,11 +47,13 @@ public class BenController {
         if (hashtagsStorage.findHashtagByName(hashtag) != null) {
             Hashtags hashtagToAdd = hashtagsStorage.findHashtagByName(hashtag);
             ben.addHashtags(hashtagToAdd);
+            benStorage.addBen(ben);
             return "redirect:/";
         }
         Hashtags hashtagsToAdd = new Hashtags(hashtag);
         hashtagsStorage.addHashtags(hashtagsToAdd);
         ben.addHashtags(hashtagsToAdd);
+        benStorage.addBen(ben);
         return "redirect:/";
     }
 }

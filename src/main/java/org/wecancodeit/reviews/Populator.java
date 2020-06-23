@@ -15,8 +15,8 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Category actors = new Category ("Actors");
-        Category historicalFigures = new Category ("Historical Figures");
+        Category actors = new Category("Actors");
+        Category historicalFigures = new Category("Historical Figures");
         categoryRepo.save(actors);
         categoryRepo.save(historicalFigures);
         Hashtags hashtags1 = new Hashtags("BenThereDoneThat");
@@ -31,7 +31,7 @@ public class Populator implements CommandLineRunner {
                 "Benjamin Franklin  was an American polymath", "../../images/Benjamin_Franklin.jpg",
                 "5 out of 5", "A figure who revolutionized American history and modern society", historicalFigures, hashtags2);
         Ben ben3 = new Ben("Ben Kingsley", "Actor", "12/31/1943", "Sir Ben Kingsley (Krishna Pandit Bhanji) is an English actor with a\n" +
-                "          career spanning over 50 years.",  "../../images/ben-kingsley.jfif", "5 out of 5", "A classy man and Sexy Beast, Ben Kingsley has been a part of many of\n" +
+                "          career spanning over 50 years.", "../../images/ben-kingsley.jfif", "5 out of 5", "A classy man and Sexy Beast, Ben Kingsley has been a part of many of\n" +
                 "            our current favorite movies. ", actors, hashtags2);
         Ben ben4 = new Ben("Ben Banneker", "Author", "11/9/1731", "Benjamin Banneker was a free African-American almanac author,\n" +
                 "          surveyor, naturalist, and farmer.", "../../images/ben_banneker.jpg", "5 out of 5", "With the ability to teach himself with no next to no education is\n" +

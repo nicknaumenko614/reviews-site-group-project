@@ -1,6 +1,7 @@
 package org.wecancodeit.reviews;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
@@ -15,6 +16,8 @@ public class JpaWiringTest {
     private CategoryRepository categoryRepo;
     @Autowired
     private HashtagsRepository hashtagsRepo;
+    @Autowired
+    private CommentRepository commentRepo;
     @Autowired
     private TestEntityManager entityManager;
 
@@ -66,6 +69,23 @@ public class JpaWiringTest {
         Hashtags retrievedHashtag = hashtagsRepo.findById(hashtags1.getId()).get();
         assertThat(retrievedHashtag).isEqualTo(hashtags1);
     }
-
+    @Test
+    public void bensCanHaveMulipleComments(){
+        Category testCategory = new Category("Test Category");
+        categoryRepo.save(testCategory);
+        Ben ben1 = new Ben("Ben Affleck", "Actor", "08/15/1972",
+                "American Actor and Filmmaker",
+                "../../images/Ben_Affleck.jpg", "4.25 out of 5",
+                "A good ol’ boy from Bas-tan.", testCategory);
+        benRepo.save(ben1);
+        Comment underTest1 = new Comment("This is a Test", ben1, "Testy");
+        Comment underTest2 = new Comment("This is a Testing track", ben1, "Tester");
+        commentRepo.save(underTest1);
+        commentRepo.save(underTest2);
+        entityManager.flush();
+        entityManager.clear();
+        Ben retrievedBen = benRepo.findById(ben1.getId()).get();
+        assertThat(retrievedBen.getComments()).containsExactlyInAnyOrder(underTest1, underTest2);
+    }
 
 }

@@ -65,6 +65,7 @@
 
             <form action="/bens/comments/delete" method="POST">
                 <input type="hidden" name="commentId" th:value = "${comment.id}">
+                <input type="hidden" name="benId" th:value="${ben.id}">
                 <button type="submit">Delete This Comment</button>
             </form>
         </div>

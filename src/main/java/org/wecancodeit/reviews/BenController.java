@@ -69,9 +69,9 @@ public class BenController {
     }
 
     @PostMapping("/bens/comments/delete")
-    public String deleteComment(long commentId) {
-        // Ben ben = benStorage.findByID(benId);
+    public String deleteComment(long benId, long commentId) {
+        Ben ben = benStorage.findByID(benId);
         commentStorage.deleteComment(commentId);
-        return "redirect:/";
+        return "redirect:/bens/" + ben.getName();
     }
 }

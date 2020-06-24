@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.Objects;
 
 @Entity
 public class Comment {
@@ -38,5 +39,21 @@ public class Comment {
 
     public String getAuthorName() {
         return authorName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Comment comment = (Comment) o;
+        return id == comment.id &&
+                Objects.equals(text, comment.text) &&
+                Objects.equals(authorName, comment.authorName) &&
+                Objects.equals(ben, comment.ben);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, text, authorName, ben);
     }
 }

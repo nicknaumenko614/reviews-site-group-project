@@ -16,11 +16,11 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Category actors = new Category("Actors");
-        Category historicalFigures = new Category("Historical Figures");
         Category athletes = new Category("Athletes");
+        Category historicalFigures = new Category("Historical Figures");
         categoryRepo.save(actors);
-        categoryRepo.save(historicalFigures);
         categoryRepo.save(athletes);
+        categoryRepo.save(historicalFigures);
         Hashtags hashtags1 = new Hashtags("BenThereDoneThat");
         Hashtags hashtags2 = new Hashtags("Ben");
         Hashtags hashtags3 = new Hashtags("BenAHotMinute");

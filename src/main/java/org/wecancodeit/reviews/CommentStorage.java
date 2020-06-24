@@ -21,4 +21,7 @@ public class CommentStorage {
     public void addComment(Comment comment) {
         commentRepo.save(comment);
     }
+    public void deleteComment(long commentId) {
+       commentRepo.deleteById(commentId);
+    }
 }

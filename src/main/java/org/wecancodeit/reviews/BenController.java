@@ -26,6 +26,7 @@ public class BenController {
         model.addAttribute("ben", benStorage.getBenByName(benName));
         model.addAttribute("categories", categoryStorage.getAllCategories());
         model.addAttribute("comments", commentStorage.getAllComments());
+
         return "review-template";
     }
 
@@ -65,5 +66,12 @@ public class BenController {
         commentStorage.addComment(commentToAdd);
         return "redirect:/bens/" + ben.getName();
 
+    }
+
+    @PostMapping("/bens/comments/delete")
+    public String deleteComment(long commentId) {
+        // Ben ben = benStorage.findByID(benId);
+        commentStorage.deleteComment(commentId);
+        return "redirect:/";
     }
 }

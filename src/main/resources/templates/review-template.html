@@ -49,9 +49,10 @@
         </p>
         <img
                 th:src="@{${ben.imageURL}}"
-                th:alt= "${ben.name}"
+                th:alt="${ben.name}"
                 class="ben-image"
-        />
+                alt="ben image"/>
+
         <h2 th:text="${ben.reviewScore}" class="review-score">5 out of 5</h2>
         <p th:text="${ben.reviewText}" class="review">
             Review Text
@@ -64,7 +65,7 @@
             <p th:text="${comment.text}">Comment Text</p>
 
             <form action="/bens/comments/delete" method="POST">
-                <input type="hidden" name="commentId" th:value = "${comment.id}">
+                <input type="hidden" name="commentId" th:value="${comment.id}">
                 <input type="hidden" name="benId" th:value="${ben.id}">
                 <button type="submit">Delete This Comment</button>
             </form>

@@ -22,7 +22,6 @@ main section {
 .items {
     display: flex;
     justify-content: center;
-    width: 1200;
     flex-wrap: wrap;
     list-style: none;
 }
